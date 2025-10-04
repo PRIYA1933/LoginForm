@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyadarshini World</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a00ff, #ff007b, #ff6a00);
+            background-size: 300% 300%;
+            animation: bgAnimation 10s ease infinite;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Animated background */
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #ff6a00, #ff007b, #6a00ff);
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: gradientMove 5s infinite alternate ease-in-out;
+        }
+        @keyframes gradientMove {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+        .navbar span {
+            display: inline-block;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #ff6a00, 0 0 20px #ff007b; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #ff6a00, 0 0 40px #ff007b; }
+        }
+
+        /* Login Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+            color: #ffeb3b;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Input fields */
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transition: 0.3s;
+        }
+        .login-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        .login-form input:focus {
+            background: rgba(255,255,255,0.3);
+            box-shadow: 0 0 10px #fff;
+        }
+
+        /* Terms checkbox */
+        .terms {
+            color: white;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .terms input {
+            margin-right: 8px;
+            accent-color: #ff6a00;
+            transform: scale(1.2);
+        }
+
+        /* Button */
+        .login-form button {
+            width: 50%;
+            padding: 12px;
+            display: block;
+            margin: auto;
+            background: #ff007b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .login-form button:hover {
+            background: #ff6a00;
+            transform: scale(1.05);
+        }
+
+        /* Signup Link */
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: white;
+        }
+        .signup-link a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <i class="bi bi-stars"></i>
+        <span>WELCOME TO PRIYADARSHINI WORLD</span>
+        <i class="bi bi-stars"></i>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <form class="login-form">
+            <p class="quote">"Once login, never comes out — you will be trapped forever inside a loop."</p>
+            <input type="text" placeholder="Enter the Username" required>
+            <input type="password" placeholder="Enter the Password" required>
+            <div class="terms">
+                <input type="checkbox" required> I agree to the terms and conditions
+            </div>
+            <button type="submit">Submit</button>
+            <p class="signup-link">Don't have an account? <a href="#">Signup</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
